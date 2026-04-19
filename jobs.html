@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Browse Jobs - JobPortal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">&#128188; JobPortal</a>
+  <ul>
+    <li><a href="jobs.html">Browse Jobs</a></li>
+    <li><a href="post-job.html">Post a Job</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+
+<div class="section">
+  <h2>All Job Listings</h2>
+
+  <!-- Filters -->
+  <div style="display:flex; gap:12px; flex-wrap:wrap; margin-bottom:28px;">
+    <input type="text" id="filterKeyword" placeholder="Search keyword..." 
+           style="padding:10px 14px; border:1px solid #ddd; border-radius:6px; font-size:0.9rem; outline:none; flex:1; min-width:180px;" />
+    <select id="filterCategory" style="padding:10px 14px; border:1px solid #ddd; border-radius:6px; font-size:0.9rem; outline:none;">
+      <option value="">All Categories</option>
+      <option>IT</option>
+      <option>Finance</option>
+      <option>Healthcare</option>
+      <option>Marketing</option>
+      <option>Education</option>
+      <option>Design</option>
+    </select>
+    <select id="filterType" style="padding:10px 14px; border:1px solid #ddd; border-radius:6px; font-size:0.9rem; outline:none;">
+      <option value="">All Types</option>
+      <option>Full-time</option>
+      <option>Part-time</option>
+      <option>Remote</option>
+      <option>Internship</option>
+    </select>
+    <button class="btn" onclick="applyFilters()">Filter</button>
+  </div>
+
+  <div class="job-grid" id="jobList"></div>
+</div>
+
+<footer>
+  <p>&copy; 2026 JobPortal. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  renderAllJobs();
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobPortal - Find Your Dream Job</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">&#128188; JobPortal</a>
+  <ul>
+    <li><a href="jobs.html">Browse Jobs</a></li>
+    <li><a href="training.html">Training</a></li>
+    <li><a href="post-job.html">Post a Job</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Find Your Dream Job Today</h1>
+  <p>Thousands of jobs from top companies. Start your search now.</p>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="&#128269; Job title, keyword..." />
+    <div class="divider"></div>
+    <input type="text" id="locationInput" placeholder="&#128205; Location..." />
+    <button class="btn" onclick="searchJobs()">Search Jobs</button>
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stats">
+  <div class="stats-grid">
+    <div class="stat"><h3>12,000+</h3><p>Jobs Available</p></div>
+    <div class="stat"><h3>4,500+</h3><p>Companies</p></div>
+    <div class="stat"><h3>85,000+</h3><p>Job Seekers</p></div>
+    <div class="stat"><h3>9,200+</h3><p>Placements</p></div>
+  </div>
+</div>
+
+<!-- Categories -->
+<div class="section">
+  <h2>Browse by Category</h2>
+  <div class="category-grid">
+    <div class="category-card" onclick="filterCategory('IT')">
+      <div class="icon">&#128187;</div><strong>IT & Software</strong>
+    </div>
+    <div class="category-card" onclick="filterCategory('Finance')">
+      <div class="icon">&#128200;</div><strong>Finance</strong>
+    </div>
+    <div class="category-card" onclick="filterCategory('Healthcare')">
+      <div class="icon">&#127973;</div><strong>Healthcare</strong>
+    </div>
+    <div class="category-card" onclick="filterCategory('Marketing')">
+      <div class="icon">&#128227;</div><strong>Marketing</strong>
+    </div>
+    <div class="category-card" onclick="filterCategory('Education')">
+      <div class="icon">&#127979;</div><strong>Education</strong>
+    </div>
+    <div class="category-card" onclick="filterCategory('Design')">
+      <div class="icon">&#127912;</div><strong>Design</strong>
+    </div>
+  </div>
+</div>
+
+<!-- Featured Jobs -->
+<div class="section">
+  <h2>Featured Jobs</h2>
+  <div class="job-grid" id="featuredJobs"></div>
+</div>
+
+<!-- Technical Training -->
+<section class="training-section">
+  <div class="inner">
+    <h2>&#127979; Technical Training Programs</h2>
+    <p class="subtitle">Boost your skills with industry-relevant courses and land your dream job faster.</p>
+
+    <!-- Tab Filters -->
+    <div class="training-tabs">
+      <button class="tab-btn active" onclick="filterTraining('all', this)">All</button>
+      <button class="tab-btn" onclick="filterTraining('cpp', this)">C++</button>
+      <button class="tab-btn" onclick="filterTraining('java', this)">Java</button>
+      <button class="tab-btn" onclick="filterTraining('web', this)">Web Dev</button>
+      <button class="tab-btn" onclick="filterTraining('data', this)">Data Science</button>
+      <button class="tab-btn" onclick="filterTraining('db', this)">Database</button>
+    </div>
+
+    <div class="training-grid" id="trainingGrid"></div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 JobPortal. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  renderFeaturedJobs();
+</script>
+</body>
+</html>

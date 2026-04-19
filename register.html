@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - JobPortal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">&#128188; JobPortal</a>
+  <ul>
+    <li><a href="jobs.html">Browse Jobs</a></li>
+    <li><a href="post-job.html">Post a Job</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="login.html">Login</a></li>
+  </ul>
+</nav>
+
+<div class="form-container">
+  <h2>&#128100; Create Account</h2>
+  <div id="regAlert"></div>
+
+  <!--
+    In production: action="RegisterServlet" method="POST"
+  -->
+  <form id="registerForm" onsubmit="submitRegister(event)">
+    <div class="form-group">
+      <label>Full Name *</label>
+      <input type="text" name="fullname" placeholder="John Doe" required />
+    </div>
+    <div class="form-group">
+      <label>Email Address *</label>
+      <input type="email" name="email" placeholder="you@example.com" required />
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" name="phone" placeholder="+1 234 567 8900" />
+    </div>
+    <div class="form-group">
+      <label>Account Type *</label>
+      <select name="role" required>
+        <option value="">Select role</option>
+        <option value="jobseeker">Job Seeker</option>
+        <option value="employer">Employer</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Password *</label>
+      <input type="password" name="password" placeholder="Min 8 characters" required minlength="8" />
+    </div>
+    <div class="form-group">
+      <label>Confirm Password *</label>
+      <input type="password" name="confirmPassword" placeholder="Repeat password" required />
+    </div>
+    <button type="submit" class="btn">Create Account</button>
+  </form>
+  <div class="form-footer">
+    Already have an account? <a href="login.html">Login here</a>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 JobPortal. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
